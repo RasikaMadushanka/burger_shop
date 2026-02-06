@@ -1,0 +1,84 @@
+<div class="p-6 space-y-10">
+    <!-- Burgers Section -->
+    <h2 class="text-2xl font-bold mb-4">🍔 Burgers</h2>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <!-- Burger Card -->
+        <div *ngFor="let burger of Burgers" class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img [src]="burger.image" [alt]="burger.image" class="w-full h-40 object-cover">
+            <div class="p-3">
+                <h3 class="font-semibold">{{burger.name}}</h3>
+                <p class="text-gray-600 text-sm">{{burger.description}}</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-green-600 font-bold">{{burger.price}}</span>
+                    <input type="number" min="1" value="1" class="w-14 border rounded text-center">
+                </div>
+                <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Buy
+                </button>
+            </div>
+        </div>
+        <!-- Repeat 4 more burger cards -->
+    </div>
+
+    <!-- Beverages Section -->
+    <h2 class="text-2xl font-bold mb-4">🥤 Beverages</h2>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <!-- Beverage Card -->
+        <div *ngFor="let beverage of Beverages" class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img [src]="beverage.image" alt="Coca Cola" class="w-full h-40 object-cover">
+            <div class="p-3">
+                <h3 class="font-semibold">{{beverage.name}}</h3>
+                <p class="text-gray-600 text-sm">{{beverage.description}}</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-green-600 font-bold">{{beverage.price}}</span>
+                    <input type="number" min="1" value="1" class="w-14 border rounded text-center">
+                </div>
+                <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Buy
+                </button>
+            </div>
+        </div>
+        <!-- Repeat 4 more beverage cards -->
+    </div>
+
+    <!-- Snacks Section -->
+    <h2 class="text-2xl font-bold mb-4">🍟 Snacks</h2>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <!-- Snack Card -->
+        <div *ngFor="let snack of snacks" class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img [src]="snack.image" alt="French Fries" class="w-full h-40 object-cover">
+            <div class="p-3">
+                <h3 class="font-semibold">{{snack.name}}</h3>
+                <p class="text-gray-600 text-sm">{{snack.description}}</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-green-600 font-bold">$3.75</span>
+                    <input type="number" min="1" value="1" class="w-14 border rounded text-center">
+                </div>
+                <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Buy
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chips Section -->
+    <h2 class="text-2xl font-bold mb-4">🥔 Chips</h2>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <!-- Chips Card -->
+        <div *ngFor="let chips of Chips" class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img [src]="chips.image" alt="Potato Chips" class="w-full h-40 object-cover">
+            <div class="p-3">
+                <h3 class="font-semibold">{{chips.name}}</h3>
+                <p class="text-gray-600 text-sm">{{chips.description}}</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-green-600 font-bold">{{chips.price}}</span>
+                    <input type="number" min="1" value="1" class="w-14 border rounded text-center">
+                </div>
+                <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Buy
+                </button>
+            </div>
+        </div>
+        <!-- Repeat 4 more chips cards -->
+    </div>
+</div>
