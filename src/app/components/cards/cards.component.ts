@@ -9,6 +9,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent {
+   orders: any[] = [];
+
+
   snacks = [
     { name: 'French Fries', description: 'Crispy golden fries', price: 375, image: 'snack1.jpg' },
     { name: 'Cheese Balls', description: 'Cheesy and crunchy', price: 450, image: 'snack2.jpg' },
@@ -41,5 +44,9 @@ export class CardsComponent {
     { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
     { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
     { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' }
-  ]
+  ];
+  addToOrder(item: any) {
+    this.orders.push(item);
+  }
+
 }

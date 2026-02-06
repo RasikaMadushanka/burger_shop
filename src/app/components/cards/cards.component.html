@@ -12,7 +12,8 @@
                     <span class="text-green-600 font-bold">{{burger.price}}</span>
                     <input type="number" min="1" value="1" class="w-14 border rounded text-center">
                 </div>
-                <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                <button (click)="addToOrder(burger)"
+                    class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
                     Buy
                 </button>
             </div>
@@ -33,7 +34,8 @@
                     <span class="text-green-600 font-bold">{{beverage.price}}</span>
                     <input type="number" min="1" value="1" class="w-14 border rounded text-center">
                 </div>
-                <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                <button (click)="addToOrder(beverage)"
+                    class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
                     Buy
                 </button>
             </div>
@@ -54,7 +56,8 @@
                     <span class="text-green-600 font-bold">$3.75</span>
                     <input type="number" min="1" value="1" class="w-14 border rounded text-center">
                 </div>
-                <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                <button (click)="addToOrder(snack)"
+                    class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
                     Buy
                 </button>
             </div>
@@ -74,7 +77,8 @@
                     <span class="text-green-600 font-bold">{{chips.price}}</span>
                     <input type="number" min="1" value="1" class="w-14 border rounded text-center">
                 </div>
-                <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                <button (click)="addToOrder(chips)"
+                    class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
                     Buy
                 </button>
             </div>
