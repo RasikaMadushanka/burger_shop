@@ -1,3 +1,14 @@
-<app-navbar></app-navbar>
-<app-hero></app-hero>
-<app-cards></app-cards>
+<div class="flex flex-col lg:flex-row max-w-7xl mx-auto px-4 gap-8">
+  
+  <!-- Left side: main content -->
+  <div class="flex-1 space-y-8">
+    <app-navbar></app-navbar>
+    <app-hero></app-hero>
+    <app-cards></app-cards>
+  </div>
+
+  <!-- Right side: order summary -->
+  <div class="w-full lg:w-96 lg:sticky lg:top-24 h-fit">
+    <app-order></app-order>
+  </div>
+</div>

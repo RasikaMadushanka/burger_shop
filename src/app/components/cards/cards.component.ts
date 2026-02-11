@@ -12,45 +12,45 @@ import { OrderserviceService } from '../../api/orderserviceapi/orderservice.serv
 export class CardsComponent {
   constructor(private orderService: OrderserviceService) { }
 
- addToOrder(item: any) {
-  this.orderService.addOrder(item);
-}
+  addToOrder(item: any) {
+    this.orderService.addOrder(item);
+  }
   orders: any[] = [];
 
 
   snacks = [
-    { name: 'French Fries', description: 'Crispy golden fries', price: 375, image: 'snack1.jpg' },
-    { name: 'Cheese Balls', description: 'Cheesy and crunchy', price: 450, image: 'snack2.jpg' },
-    { name: 'Onion Rings', description: 'Crispy onion rings', price: 325, image: 'snack3.jpg' },
-    { name: 'Nachos', description: 'Corn chips with salsa', price: 500, image: 'snack4.jpg' },
-    { name: 'Popcorn', description: 'Buttery and salty', price: 299, image: 'snack5.jpg' }
+    { name: 'French Fries', description: 'Crispy golden fries', price: 375, image: 'assets/images/burger1.jpg' },
+    { name: 'Cheese Balls', description: 'Cheesy and crunchy', price: 450, image: 'assets/images/burger2.jpg' },
+    { name: 'Onion Rings', description: 'Crispy onion rings', price: 325, image: 'assets/images/burger3.jpg' },
+    { name: 'Nachos', description: 'Corn chips with salsa', price: 500, image: 'assets/images/burger4.jpg' },
+    { name: 'Popcorn', description: 'Buttery and salty', price: 299, image: 'assets/images/burger5.jpg' }
   ];
 
   Beverages = [
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' }
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger1.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger2.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger3.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger4.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger5.jpg' }
 
 
   ];
 
   Burgers = [
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' }
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger1.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger2.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger3.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger4.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger5.jpg' }
   ];
 
   Chips = [
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' }
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger1.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger2.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger3.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger4.jpg' },
+    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger5.jpg' }
   ];
-  
+
 
 }
