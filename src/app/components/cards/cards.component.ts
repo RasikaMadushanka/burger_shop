@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrderserviceService } from '../../api/orderserviceapi/orderservice.service';
+import { ItemserviceService } from '../../api/itemservice.service';
+import { Item } from '../../api/itemservice.service';
 
 @Component({
   selector: 'app-cards',
@@ -9,48 +11,39 @@ import { OrderserviceService } from '../../api/orderserviceapi/orderservice.serv
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
-export class CardsComponent {
-  constructor(private orderService: OrderserviceService) { }
+export class CardsComponent implements OnInit {
 
-  addToOrder(item: any) {
+  items: Item[] = [];
+  Burgers: Item[] = [];
+  Beverages: Item[] = [];
+  snacks: Item[] = [];
+  Chips: Item[] = [];
+
+  constructor(
+    private itemService: ItemserviceService,
+    private orderService: OrderserviceService
+  ) {}
+
+  ngOnInit(): void {
+    this.loadItems();
+  }
+
+  loadItems() {
+    this.itemService.getAllitem().subscribe({
+      next: (data) => {
+        this.items = data;
+        this.Burgers = data.filter(i => i.status === 'burger');
+        this.Beverages = data.filter(i => i.status === 'beverage');
+        this.snacks = data.filter(i => i.status === 'snack');
+        this.Chips = data.filter(i => i.status === 'chips');
+      },
+      error: (err) => {
+        console.error('Failed to load items:', err);
+      }
+    });
+  }
+
+  addToOrder(item: Item) {
     this.orderService.addOrder(item);
   }
-  orders: any[] = [];
-
-
-  snacks = [
-    { name: 'French Fries', description: 'Crispy golden fries', price: 375, image: 'assets/images/burger1.jpg' },
-    { name: 'Cheese Balls', description: 'Cheesy and crunchy', price: 450, image: 'assets/images/burger2.jpg' },
-    { name: 'Onion Rings', description: 'Crispy onion rings', price: 325, image: 'assets/images/burger3.jpg' },
-    { name: 'Nachos', description: 'Corn chips with salsa', price: 500, image: 'assets/images/burger4.jpg' },
-    { name: 'Popcorn', description: 'Buttery and salty', price: 299, image: 'assets/images/burger5.jpg' }
-  ];
-
-  Beverages = [
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger2.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger3.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger4.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger5.jpg' }
-
-
-  ];
-
-  Burgers = [
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger2.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger3.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger4.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger5.jpg' }
-  ];
-
-  Chips = [
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger1.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger2.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger3.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger4.jpg' },
-    { name: 'orange juice', description: 'natural orange use', price: 250, image: 'assets/images/burger5.jpg' }
-  ];
-
-
 }
