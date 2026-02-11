@@ -1,44 +1,28 @@
-<!-- <div *ngIf="orders.length > 0" 
-     class="max-w-md mx-auto bg-white/70 backdrop-blur-md border border-gray-100 rounded-3xl shadow-xl overflow-hidden font-sans">
-
-  <div class="px-8 pt-8 pb-4">
-    <h2 class="text-2xl font-bold text-gray-800 tracking-tight">Order Summary</h2>
-    <p class="text-sm text-gray-500">Review your items before checkout.</p>
-  </div>
+<div *ngIf="orders.length > 0" class="max-w-md mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
+  <h2 class="text-2xl font-bold px-8 pt-8">Order Summary</h2>
 
   <div class="px-8 py-4 space-y-6">
-    <div *ngFor="let order of orders" class="flex items-center justify-between group">
-      <div class="flex items-center space-x-4">
-        <img [src]="order.image" alt="{{order.name}}" class="w-16 h-16 rounded-2xl object-cover">
-        <div>
-          <h4 class="font-semibold text-gray-800">{{order.name}}</h4>
-          <p class="text-xs text-gray-400">{{order.description}}</p>
-        </div>
+    <div *ngFor="let order of orders" class="flex justify-between">
+      <div>
+        <h4>{{order.name}} (x{{order.quantity}})</h4>
+        <p class="text-xs text-gray-400">{{order.description}}</p>
       </div>
-      <span class="font-bold text-gray-700">${{order.price / 100}}</span>
+      <span>LKR{{(order.price * order.quantity)}}</span>
     </div>
   </div>
 
-  <div class="px-8 py-6 bg-gray-50/50 space-y-3">
-    <div class="flex justify-between text-sm text-gray-600">
+  <div class="px-8 py-6 bg-gray-50">
+    <div class="flex justify-between">
       <span>Subtotal</span>
-      <span>${{orders.reduce((sum, item) => sum + item.price, 0) / 100}}</span>
+      <span>LKR{{subtotal }}</span>
     </div>
-    <div class="flex justify-between text-sm text-gray-600">
+    <div class="flex justify-between">
       <span>Shipping</span>
-      <span class="text-green-500 font-medium">Free</span>
+      <span class="text-green-500">Free</span>
     </div>
-    <div class="pt-4 flex justify-between items-center border-t border-gray-200">
-      <span class="text-lg font-bold text-gray-800">Total</span>
-      <span class="text-2xl font-black text-indigo-600">
-        ${{orders.reduce((sum, item) => sum + item.price, 0) / 100}}
-      </span>
+    <div class="flex justify-between border-t pt-4">
+      <span class="font-bold">Total</span>
+      <span class="text-indigo-600 font-black text-2xl">{{subtotal }}</span>
     </div>
   </div>
-
-  <div class="p-8">
-    <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-indigo-200 transition-all active:scale-95">
-      Confirm Order
-    </button>
-  </div>
-</div> -->
+</div>

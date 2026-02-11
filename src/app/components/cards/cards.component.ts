@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { OrderserviceService } from '../../api/orderserviceapi/orderservice.service';
 
 @Component({
   selector: 'app-cards',
@@ -9,7 +10,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent {
-   orders: any[] = [];
+  constructor(private orderService: OrderserviceService) { }
+
+ addToOrder(item: any) {
+  this.orderService.addOrder(item);
+}
+  orders: any[] = [];
 
 
   snacks = [
@@ -45,8 +51,6 @@ export class CardsComponent {
     { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' },
     { name: 'orange juice', description: 'natural orange use', price: 250, image: 'beverage1.jpg' }
   ];
-  addToOrder(item: any) {
-    this.orders.push(item);
-  }
+  
 
 }

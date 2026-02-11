@@ -50,18 +50,9 @@
             </svg>
         </button>
 
-        <button
-            class="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 p-1 pr-3 rounded-full transition border border-slate-700">
-            <div
-                class="h-8 w-8 rounded-full bg-gradient-to-tr from-orange-400 to-red-500 flex items-center justify-center">
-                <!-- Shopping Cart Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="white" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M2.25 2.25h1.386c.51 0 .955.343 1.09.835l.383 1.437m0 0L6.75 12.75h10.5l1.5-6.75H6.75m-1.641-2.228L4.5 6.75h15.75m-12 12a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm9 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                </svg>
-            </div>
-            <span class="text-sm font-medium text-slate-200 hidden md:block" routerLink="/order">Orders</span>
+        <button routerLink="/order" class="flex items-center ...">
+            <div class="h-8 w-8 ..."> ... </div>
+            <span class="text-sm font-medium text-slate-200 hidden md:block">Orders</span>
         </button>
     </div>
 </nav>
